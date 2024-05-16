@@ -1,61 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Top 10 120Hz Monitors</title>
-<style>
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
-  }
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    margin: 10px;
-    padding: 20px;
-    width: 300px;
-    position: relative;
-  }
-  .circle {
-    width: 30px;
-    height: 30px;
-    background-color: #4285f4;
-    border-radius: 50%;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: -15px;
-    left: -15px;
-  }
-  .card:not(:first-child) {
-    border-top: 2px solid #e0e0e0;
-  }
-  h2 {
-    color: #333;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Monitors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            margin-top: 40px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto;
+        }
+
+        .monitor-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .monitor-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0;
+        }
+
+        .card {
+            flex: 1;
+            margin: 0 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .number-card, .score-card {
+            width: 100px;
+            height: auto;
+            flex-shrink: 0;
+        }
+
+        .number-card {
+            background-color: #007bff;
+            color: #fff;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .info-card {
+            text-align: left;
+            flex: 1;
+        }
+
+        .info-card h2 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #007bff;
+            font-weight: 600;
+        }
+
+        .info-card p {
+            margin: 5px 0 0;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .score-card {
+            background-color: #28a745;
+            color: #fff;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .monitor-item {
+                flex-direction: column;
+                align-items: stretch;
+                margin-bottom: 20px;
+            }
+
+            .card {
+                margin: 10px 0;
+                width: 100%;
+            }
+
+            .number-card, .score-card {
+                width: 100%;
+                height: 70px;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-  <h1>Top 10 120Hz Monitors</h1>
-  <!-- Repeat this block for each monitor in the list -->
-  <div class="card">
-    <div class="circle">1</div>
-    <h2>Monitor Model Name</h2>
-    <p>Some details about the monitor...</p>
-  </div>
-  <!-- ... -->
-</div>
+    <h1>Top 10 Monitors</h1>
+    <div class="container">
+        <ul class="monitor-list">
+            <li class="monitor-item">
+                <div class="card number-card">1</div>
+                <div class="card info-card">
+                    <h2>Dell UltraSharp U2720Q</h2>
+                    <p>27" 4K UHD, IPS Panel</p>
+                </div>
+                <div class="card score-card">9.8</div>
+            </li>
+            <li class="monitor-item">
+                <div class="card number-card">2</div>
+                <div class="card info-card">
+                    <h2>LG 27GN950-B</h2>
+                    <p>27" 4K UHD, Nano IPS, 144Hz</p>
+                </div>
+                <div class="card score-card">9.6</div>
+            </li>
+            <li class="monitor-item">
+                <div class="card number-card">3</div>
+                <div class="card info-card">
+                    <h2>ASUS ROG Swift PG27UQ</h2>
+                    <p>27" 4K UHD, IPS, G-SYNC, 144Hz</p>
+                </div>
+                <div class="card score-card">9.4</div>
+            </li>
+            <li class="monitor-item">
+                <div class="card number-card">4</div>
+                <div class="card info-card">
+                    <h2>Samsung Odyssey G7</h2>
+                    <p>32" QHD, VA Panel, 240Hz</p>
+                </div>
+                <div class="card score-card">9.2</div>
+            </li>
+            <li class="monitor-item">
+                <div class="card number-card">5</div>
+                <div class="card info-card">
+                    <h2>BenQ PD3220U</h2>
+                    <p>32" 4K UHD, IPS Panel</p>
+                </div>
+                <div class="card score-card">9.1</div>
+            </li>
+            <li class="monitor-item">
+                <div class="card number-card">6</div>
+                <div class="card info-card">
+                    <h2>Acer Predator X27</h2>
+                    <p>27" 4K UHD, IPS, G-SYNC, 144Hz</p>
+                </div>
+                <div class="card score-card">9.0</div>
+            </li>
+            <li class="monitor-item">
+                <div class="card number-card">7</div>
+                <div class="card info-card">
+                    <h2>ViewSonic Elite XG270QG</h2>
+                    <p>27" QHD, IPS, G-SYNC, 165Hz</p>
+                </div>
+                <div class="card score-card">8.9</div>
+            </li>
+            <li class="monitor-item">
+                <div class="card number-card">8</div>
+                <div class="card info-card">
+                    <h2>Gigabyte AORUS FI27Q-P</h2>
+                    <p>27" QHD, IPS, 165Hz</p>
+                </div>
+                <div class="card score-card">8.8</div>
+            </li>
+            <li class="monitor-item">
+                <div class="card number-card">9</div>
+                <div class="card info-card">
+                    <h2>HP Omen X 27</h2>
+                    <p>27" QHD, TN Panel, 240Hz</p>
+                </div>
+                <div class="card score-card">8.6</div>
+            </li>
+            <li class="monitor-item">
+                <div class="card number-card">10</div>
+                <div class="card info-card">
+                    <h2>ASUS ProArt PA32UCX</h2>
+                    <p>32" 4K UHD, Mini LED, HDR</p>
+                </div>
+                <div class="card score-card">8.5</div>
+            </li>
+        </ul>
+    </div>
 </body>
 </html>
