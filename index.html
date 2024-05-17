@@ -4,206 +4,235 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top 10 Monitors</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            margin: 0;
-            padding: 0;
             font-family: 'Poppins', sans-serif;
-            background-color: #f4f4f9;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 2rem;
         }
 
-        h1 {
-            margin-top: 40px;
-            font-weight: 600;
-            color: #333;
+        .title-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 2rem;
+            transition: box-shadow 0.2s ease-in-out;
         }
 
-        .container {
-            width: 90%;
-            max-width: 1000px;
-            margin: 20px auto;
+        .title-card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .monitor-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
         }
 
-        .monitor-item {
+        .monitor-item, .monitor-item-header {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 15px 0;
+            gap: 1rem;
+            align-items: stretch; /* Stretch cards vertically */
         }
 
         .card {
-            flex: 1;
-            margin: 0 10px;
             background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            text-align: center;
-            padding: 20px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.2s ease-in-out;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically in the card */
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        .number-card, .score-card {
-            width: 100px;
-            height: auto;
-            flex-shrink: 0;
+        .number-card, .score-card, .header-card {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            width: 70px; /* Adjust width as needed */
         }
 
         .number-card {
-            background-color: #007bff;
-            color: #fff;
-            font-size: 1.5em;
-            font-weight: 600;
-        }
-
-        .info-card {
-            text-align: left;
-            flex: 1;
-        }
-
-        .info-card h2 {
-            margin: 0;
-            font-size: 1.2em;
-            color: #007bff;
-            font-weight: 600;
-        }
-
-        .info-card p {
-            margin: 5px 0 0;
-            font-size: 0.9em;
-            color: #555;
+            color: #3f51b5;
         }
 
         .score-card {
-            background-color: #28a745;
-            color: #fff;
-            font-size: 1.5em;
-            font-weight: 600;
+            color: #4caf50;
         }
 
-        @media (max-width: 768px) {
-            .monitor-item {
-                flex-direction: column;
-                align-items: stretch;
-                margin-bottom: 20px;
-            }
-
-            .card {
-                margin: 10px 0;
-                width: 100%;
-            }
-
-            .number-card, .score-card {
-                width: 100%;
-                height: 70px;
-            }
+        .info-card, .header-info-card {
+            flex: 1;
         }
+
+        .monitor-name, .header-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .monitor-specs {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Headers specific styles */
+        .header-card {
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: 700;
+        }
+        
+        .header-info-card {
+            text-align: left;
+            padding-left: 1rem; /* Align text with the monitor names */
+        }
+
+         /* Add styles for the search bar */
+         .search-bar-container {
+            display: flex;
+            justify-content: center; /* Center the search bar */
+            margin-bottom: 1rem; /* Space below the search bar */
+        }
+
+        .search-bar {
+            padding: 0.5rem;
+            width: 100%;
+            max-width: 300px; /* Maximum width of the search bar */
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
     </style>
 </head>
 <body>
-    <h1>Top 10 Monitors</h1>
-    <div class="container">
-        <ul class="monitor-list">
-            <li class="monitor-item">
-                <div class="card number-card">1</div>
-                <div class="card info-card">
-                    <h2>Dell UltraSharp U2720Q</h2>
-                    <p>27" 4K UHD, IPS Panel</p>
-                </div>
-                <div class="card score-card">9.8</div>
-            </li>
-            <li class="monitor-item">
-                <div class="card number-card">2</div>
-                <div class="card info-card">
-                    <h2>LG 27GN950-B</h2>
-                    <p>27" 4K UHD, Nano IPS, 144Hz</p>
-                </div>
-                <div class="card score-card">9.6</div>
-            </li>
-            <li class="monitor-item">
-                <div class="card number-card">3</div>
-                <div class="card info-card">
-                    <h2>ASUS ROG Swift PG27UQ</h2>
-                    <p>27" 4K UHD, IPS, G-SYNC, 144Hz</p>
-                </div>
-                <div class="card score-card">9.4</div>
-            </li>
-            <li class="monitor-item">
-                <div class="card number-card">4</div>
-                <div class="card info-card">
-                    <h2>Samsung Odyssey G7</h2>
-                    <p>32" QHD, VA Panel, 240Hz</p>
-                </div>
-                <div class="card score-card">9.2</div>
-            </li>
-            <li class="monitor-item">
-                <div class="card number-card">5</div>
-                <div class="card info-card">
-                    <h2>BenQ PD3220U</h2>
-                    <p>32" 4K UHD, IPS Panel</p>
-                </div>
-                <div class="card score-card">9.1</div>
-            </li>
-            <li class="monitor-item">
-                <div class="card number-card">6</div>
-                <div class="card info-card">
-                    <h2>Acer Predator X27</h2>
-                    <p>27" 4K UHD, IPS, G-SYNC, 144Hz</p>
-                </div>
-                <div class="card score-card">9.0</div>
-            </li>
-            <li class="monitor-item">
-                <div class="card number-card">7</div>
-                <div class="card info-card">
-                    <h2>ViewSonic Elite XG270QG</h2>
-                    <p>27" QHD, IPS, G-SYNC, 165Hz</p>
-                </div>
-                <div class="card score-card">8.9</div>
-            </li>
-            <li class="monitor-item">
-                <div class="card number-card">8</div>
-                <div class="card info-card">
-                    <h2>Gigabyte AORUS FI27Q-P</h2>
-                    <p>27" QHD, IPS, 165Hz</p>
-                </div>
-                <div class="card score-card">8.8</div>
-            </li>
-            <li class="monitor-item">
-                <div class="card number-card">9</div>
-                <div class="card info-card">
-                    <h2>HP Omen X 27</h2>
-                    <p>27" QHD, TN Panel, 240Hz</p>
-                </div>
-                <div class="card score-card">8.6</div>
-            </li>
-            <li class="monitor-item">
-                <div class="card number-card">10</div>
-                <div class="card info-card">
-                    <h2>ASUS ProArt PA32UCX</h2>
-                    <p>32" 4K UHD, Mini LED, HDR</p>
-                </div>
-                <div class="card score-card">8.5</div>
-            </li>
-        </ul>
+    <div class="title-card">
+        <h1>Top 10 Monitors in 2023</h1>
     </div>
+
+        <!-- Search bar container -->
+        <div class="search-bar-container">
+            <input type="text" id="searchBar" oninput="filterMonitors()" placeholder="Search monitors..." class="search-bar">
+        </div>
+
+    <div class="monitor-list">
+        <!-- Header row -->
+        <div class="monitor-item monitor-item-header">
+            <div class="card header-card">No.</div>
+            <div class="card header-info-card">
+                <div class="header-title">Monitor Name and Properties</div>
+            </div>
+            <div class="card header-card">Score</div>
+        </div>
+
+        <!-- Monitor data -->
+        <div class="monitor-item" data-name="LG UltraGear 27GN950-B 27-inch, 4K UHD, 144Hz, IPS">
+            <div class="card number-card">1</div>
+            <div class="card info-card">
+                <div class="monitor-name">LG UltraGear 27GN950-B</div>
+                <div class="monitor-specs">27-inch, 4K UHD, 144Hz, IPS</div>
+            </div>
+            <div class="card score-card">9.5</div>
+        </div>
+        <div class="monitor-item" data-name="Dell Alienware AW3423DW 34-inch, WQHD, 175Hz, OLED">
+            <div class="card number-card">2</div>
+            <div class="card info-card">
+                <div class="monitor-name">Dell Alienware AW3423DW</div>
+                <div class="monitor-specs">34-inch, WQHD, 175Hz, OLED</div>
+            </div>
+            <div class="card score-card">9.3</div>
+        </div>
+        <div class="monitor-item" data-name="Asus ROG Swift PG279QM 27-inch, QHD, 240Hz, IPS">
+            <div class="card number-card">3</div>
+            <div class="card info-card">
+                <div class="monitor-name">Asus ROG Swift PG279QM</div>
+                <div class="monitor-specs">27-inch, QHD, 240Hz, IPS</div>
+            </div>
+            <div class="card score-card">9.2</div>
+        </div>
+        <div class="monitor-item" data-name="Samsung Odyssey G7 32-inch, QHD, 240Hz, VA">
+            <div class="card number-card">4</div>
+            <div class="card info-card">
+                <div class="monitor-name">Samsung Odyssey G7</div>
+                <div class="monitor-specs">32-inch, QHD, 240Hz, VA</div>
+            </div>
+            <div class="card score-card">9.1</div>
+        </div>
+        <div class="monitor-item" data-name="Acer Predator XB273K 27-inch, 4K UHD, 144Hz, IPS">
+            <div class="card number-card">5</div>
+            <div class="card info-card">
+                <div class="monitor-name">Acer Predator XB273K</div>
+                <div class="monitor-specs">27-inch, 4K UHD, 144Hz, IPS</div>
+            </div>
+            <div class="card score-card">9.0</div>
+        </div>
+        <div class="monitor-item" data-name="MSI Optix MAG274QRF-QD 27-inch, QHD, 165Hz, IPS">
+            <div class="card number-card">6</div>
+            <div class="card info-card">
+                <div class="monitor-name">MSI Optix MAG274QRF-QD</div>
+                <div class="monitor-specs">27-inch, QHD, 165Hz, IPS</div>
+            </div>
+            <div class="card score-card">8.9</div>
+        </div>
+        <div class="monitor-item" data-name="Gigabyte M32U 32-inch, 4K UHD, 144Hz, IPS">
+            <div class="card number-card">7</div>
+            <div class="card info-card">
+                <div class="monitor-name">Gigabyte M32U</div>
+                <div class="monitor-specs">32-inch, 4K UHD, 144Hz, IPS</div>
+            </div>
+            <div class="card score-card">8.8</div>
+        </div>
+        <div class="monitor-item" data-name="BenQ EX2780Q 27-inch, QHD, 144Hz, IPS">
+            <div class="card number-card">8</div>
+            <div class="card info-card">
+                <div class="monitor-name">BenQ EX2780Q</div>
+                <div class="monitor-specs">27-inch, QHD, 144Hz, IPS</div>
+            </div>
+            <div class="card score-card">8.7</div>
+        </div>
+        <div class="monitor-item" data-name="ASUS TUF Gaming VG289Q 28-inch, 4K UHD, 60Hz, IPS">
+            <div class="card number-card">9</div>
+            <div class="card info-card">
+                <div class="monitor-name">ASUS TUF Gaming VG289Q</div>
+                <div class="monitor-specs">28-inch, 4K UHD, 60Hz, IPS</div>
+            </div>
+            <div class="card score-card">8.6</div>
+        </div>
+    </div>
+
+    <script>
+    function filterMonitors() {
+
+        console.log('Filter function called'); // Debugging line
+        // Get the search term from the input field and convert it to lowercase for case-insensitive comparison
+        let searchTerm = document.getElementById('searchBar').value.toLowerCase();
+
+        // Retrieve all the monitor items from the document
+        let monitors = document.querySelectorAll('.monitor-item');
+
+        // Loop through the monitor items
+        monitors.forEach(function(monitor) {
+            // Get the data-name attribute and convert it to lowercase
+            let name = monitor.getAttribute('data-name').toLowerCase();
+
+            // Check if the monitor's name includes the search term
+            if (name.includes(searchTerm)) {
+                // If the search term is found in the monitor's name, display the monitor
+                monitor.style.display = '';
+            } else {
+                // Otherwise, hide the monitor
+                monitor.style.display = 'none';
+            }
+        });
+    }
+</script>
 </body>
 </html>
