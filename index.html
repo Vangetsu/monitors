@@ -221,10 +221,10 @@
         // Loop through the monitor items
         monitors.forEach(function(monitor) {
             // Get the data-name attribute and convert it to lowercase
-            let name = monitor.getAttribute('data-name').toLowerCase();
+            let name = monitor.getAttribute('data-name');
 
             // Check if the monitor's name includes the search term
-            if (name.includes(searchTerm)) {
+            if (name && name.toLowerCase().includes(searchTerm)) {
                 // If the search term is found in the monitor's name, display the monitor
                 monitor.style.display = '';
             } else {
